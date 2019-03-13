@@ -3,7 +3,7 @@
 class AppsController < ApplicationController
   def index
     records = paginate(policy_scope(App).includes(:event_types))
-    render :json => AppSerializer.new(records, :include => %i[event_types event_types.external_id])
+    render :json => AppSerializer.new(records, :include => %i[event_types event_types.external_id event_types.levels])
   end
 
   def show
