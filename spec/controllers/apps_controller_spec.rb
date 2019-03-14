@@ -3,6 +3,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe AppsController do
   let(:example_app) { FactoryBot.create(:app, :with_event_type) }
   setup do
@@ -38,3 +39,4 @@ RSpec.describe AppsController do
     JSON.parse(response.body)
   end
 end
+# rubocop:enable Metrics/BlockLength
