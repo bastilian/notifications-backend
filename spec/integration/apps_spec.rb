@@ -95,7 +95,7 @@ included_event_type_spec = {
 
 # rubocop:disable Metrics/BlockLength
 describe 'apps API' do
-  path '/api/webhooks/apps' do
+  path "#{ENV['PATH_PREFIX']}/apps" do
     get 'List all apps' do
       tags 'app'
       description 'Lists all apps requested'
@@ -159,7 +159,7 @@ describe 'apps API' do
     end
   end
 
-  path '/api/webhooks/apps/{id}' do
+  path "#{ENV['PATH_PREFIX']}/apps/{id}" do
     get 'Show an app' do
       tags 'app'
       description 'Shows the requested app'

@@ -21,7 +21,7 @@ incoming_endpoint_spec = simple_spec(
 
 # rubocop:disable Metrics/BlockLength
 describe 'endpoints API' do
-  path '/api/webhooks/endpoints' do
+  path "#{ENV['PATH_PREFIX']}/endpoints" do
     get 'List all endpoints' do
       tags 'endpoint'
       description 'Lists all endpoints requested'
@@ -147,7 +147,7 @@ describe 'endpoints API' do
     end
   end
 
-  path '/api/webhooks/endpoints/{id}' do
+  path "#{ENV['PATH_PREFIX']}/endpoints/{id}" do
     get 'Show an endpoint' do
       tags 'endpoint'
       description 'Shows the requested endpoint'
